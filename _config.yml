@@ -39,7 +39,8 @@ github_username:  4s0ck3t
 
   #theme: jekyll-theme-awesome
 
-theme: jekyll-theme-clean-blog
+  #theme: jekyll-theme-clean-blog
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
