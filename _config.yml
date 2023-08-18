@@ -39,9 +39,7 @@ github_username:  4s0ck3t
 
   #theme: jekyll-theme-awesome
 
-remote_theme: jekyll-theme-clean-blog
-  plugins:
-    - jekyll-remote-theme
+theme: jekyll-theme-clean-blog
 
 # Exclude from processing.
 # The following items will not be processed, by default.
