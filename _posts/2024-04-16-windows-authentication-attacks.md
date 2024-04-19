@@ -155,13 +155,13 @@ Once hashes are obtained we can either use Pass The Hash (pth) attacks or try to
 
 ## Hashcat
 
-First we can check what hardware hashcat will be using, as running from a GPU is considerably faster than the CPU.
+First we can check what hardware hashcat will be using, as running on a GPU is considerably faster than the CPU.
 
 ```shell
 hashcat -I
 ```
 
-Now cracking in it's simplest form, we use the _rockyou_ wordlist. RockYou was a company that developed widgets social networks including MySpace and Facebook. In December 2009 they had a databreach of 32 million user accounts and unencrypted passwords.
+Cracking in it's simplest form using hashcat, we use the _rockyou_ wordlist. RockYou was a company that developed widgets for social networks including MySpace and Facebook. In December 2009 they had a databreach of 32 million user accounts and their unencrypted passwords.
 
 ```shell
 hashcat -a 0 -m 1000 hashes /usr/share/wordlists/rockyou.txt
@@ -203,7 +203,7 @@ Adding a number and a symbol
 ```shell
 hashcat -a 6 -m 1000 hashes /usr/share/wordlists/rockyou.txt '?d?s'
 ```
-
+This is using the character set below:
 
 ```shell
 ? | Charset
@@ -225,7 +225,7 @@ hashcat -m 0 --stdout /usr/share/wordlists/rockyou.txt -r add-year.rule > modifi
 hashcat -a 6 -m 1000 hashes modified_rockyou.txt '?s'
 ```
 
-[OneRuleToRuleThemAll](https://notsosecure.com/one-rule-to-rule-them-all) can be accessed on Github [here](https://github.com/NotSoSecure/password_cracking_rules).
+Additional rules can be found on the [hashcat wiki](https://hashcat.net/wiki/doku.php?id=rule_based_attack), however one that has proved very useful is [OneRuleToRuleThemAll](https://notsosecure.com/one-rule-to-rule-them-all) which can be accessed on Github [here](https://github.com/NotSoSecure/password_cracking_rules).
 
 ```shell
 hashcat -a 0 -m 1000 hashes /usr/share/wordlists/rockyou.txt -r OneRuleToRuleThemAll.rule
